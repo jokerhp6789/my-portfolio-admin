@@ -1,0 +1,106 @@
+module.exports = {
+    env: {
+        browser: true,
+        es6: true,
+    },
+    extends: "airbnb",
+    globals: {
+        Atomics: "readonly",
+        SharedArrayBuffer: "readonly",
+    },
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+        ecmaVersion: 2018,
+        sourceType: "module",
+    },
+    plugins: ["react", "@typescript-eslint"],
+    settings: {
+        "import/resolver": {
+            node: {
+                extensions: [".js", ".jsx", ".ts", ".tsx"],
+            },
+        },
+    },
+    rules: {
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/prop-types": [0],
+        "react/no-array-index-key": [0],
+        "react/forbid-prop-types": [0],
+        "react/no-danger": [0],
+        "react/require-default-props": [0],
+        "no-shadow": [0],
+        // [Deprecated], https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
+        "jsx-a11y/label-has-for": [0],
+        "jsx-a11y/alt-text": [0],
+        "jsx-a11y/anchor-is-valid": [0],
+        "jsx-a11y/label-has-associated-control": [2, { assert: "either" }],
+        "react/jsx-props-no-spreading": [0],
+        "react/jsx-fragments": [0],
+        quotes: [0],
+        indent: [0],
+        "eol-last": [0],
+        "object-curly-newline": [0],
+        "brace-style": [0],
+        "react/destructuring-assignment": [0],
+        "implicit-arrow-linebreak": [0],
+
+        "arrow-body-style": [0],
+        "comma-dangle": ["warn", "only-multiline"],
+        "no-unused-vars": ["warn", { vars: "all", args: "after-used", ignoreRestSiblings: false }],
+        "react/no-unknown-property": [2, { ignore: ["class"] }],
+        "react/static-property-placement": [0],
+        "spaced-comment": [0],
+        "react/jsx-wrap-multilines": [0],
+        "react/jsx-one-expression-per-line": [0],
+        "no-unused-expressions": [0],
+        "react/jsx-closing-tag-location": [0],
+        "jsx-a11y/click-events-have-key-events": [0],
+        "jsx-a11y/no-static-element-interactions": [0],
+        "react/no-unused-state": [1],
+        "operator-linebreak": [0],
+        camelcase: [1],
+        "no-confusing-arrow": [0],
+        "no-use-before-define": [0],
+        "function-paren-newline": [0],
+        "react/jsx-curly-newline": [0],
+        "react/button-has-type": [0],
+        "import/no-cycle": [0],
+
+        "react/react-in-jsx-scope": [0],
+
+        // [Deprecated], https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
+
+        "@typescript-eslint/no-unused-vars": ["warn"],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                js: "never",
+                mjs: "never",
+                jsx: "never",
+                ts: "never",
+                tsx: "never",
+            },
+        ],
+        "import/prefer-default-export": [0],
+        "max-len": [
+            "error",
+            160,
+            2,
+            {
+                ignoreUrls: true,
+                ignoreComments: false,
+                ignoreRegExpLiterals: true,
+                ignoreStrings: true,
+                ignoreTemplateLiterals: true,
+            },
+        ],
+        "react/jsx-filename-extension": [1, { extensions: [".jsx", ".tsx"] }],
+        "class-methods-use-this": "off",
+    },
+    ignorePatterns: ["src/api/*"],
+};
